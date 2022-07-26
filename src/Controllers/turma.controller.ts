@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { Turma } from "src/models/turma.model";
+import { Turma } from "src/models/Turma.models";
 import { TurmaService } from "src/services/turma.service";
 
 

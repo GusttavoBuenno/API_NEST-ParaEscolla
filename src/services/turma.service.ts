@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
-import { Turma } from "src/models/turma.model";
+import { Turma } from "src/models/Turma.models";
 
 
 @Injectable()

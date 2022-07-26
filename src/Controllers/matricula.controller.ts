@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body } from "@nestjs/common";
-import { Matricula } from "src/models/matricula.model";
+import { Matricula } from "src/models/Matricula.models";
 import { MatriculaService } from "src/services/matricula.service";
 
 

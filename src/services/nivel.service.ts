@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
-import { Nivel } from "src/models/nivel.model";
+import { Nivel } from "src/models/Nivel.models";
 
 
 @Injectable()
