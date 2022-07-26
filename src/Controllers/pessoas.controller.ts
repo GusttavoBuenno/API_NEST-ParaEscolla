@@ -24,8 +24,8 @@ export class PessoasController {
     }
 
     @Put()
-    async alterar(@Body() livro: Pessoas): Promise<[number, Pessoas[]]> {
-        return this.pessoasService.alterar(livro);
+    async alterar(@Body() pessoas: Pessoas): Promise<[number, Pessoas[]]> {
+        return this.pessoasService.alterar(pessoas);
     }
 
     @Delete(':id')

@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
 import { Matricula } from "src/models/Matricula.models";
+import { Nivel } from "src/models/Nivel.models";
+import { Turma } from "src/models/Turma.models";
 import { Pessoas } from "../models/Pessoas.models";
 
 @Injectable()
@@ -11,27 +13,27 @@ export class PessoasService {
     ) { }
 
     async obterTodos(): Promise<Pessoas[]> {
-        return this.pessoasModel.findAll({ include: [Matricula] });
+        return this.pessoasModel.findAll();
     }
 
     async obterUm(id: number): Promise<Pessoas> {
         return this.pessoasModel.findByPk(id);
     }
 
-    async criar(livro: Pessoas) {
-        this.pessoasModel.create(livro);
+    async criar(pessoas: Pessoas) {
+        this.pessoasModel.create(pessoas);
     }
 
-    async alterar(livro: Pessoas): Promise<[number, Pessoas[]]> {
-        return this.pessoasModel.update(livro, {
+    async alterar(pessoas: Pessoas): Promise<[number, Pessoas[]]> {
+        return this.pessoasModel.update(pessoas, {
             where: {
-                id: livro.id
+                id: pessoas.id
             }
         });
     }
 
     async apagar(id: number) {
-        const livro: Pessoas = await this.obterUm(id);
-        livro.destroy();
+        const pessoas: Pessoas = await this.obterUm(id);
+        pessoas.destroy();
     }
 }

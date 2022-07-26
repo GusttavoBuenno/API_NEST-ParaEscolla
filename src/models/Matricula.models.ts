@@ -1,24 +1,31 @@
-import { Table, Model, Column, ForeignKey, BelongsTo, HasMany } from "sequelize-typescript";
+import { Table, Model, Column, ForeignKey, BelongsTo, HasMany, getAssociations } from "sequelize-typescript";
 import { Pessoas } from "./Pessoas.models";
-
+import { Turma } from "./Turma.models";
 
 
 
 @Table
 export class Matricula extends Model<Matricula>{
 
-    @Column
-    estudante_id: number
+
 
     @Column
     status: string
 
+    @ForeignKey(() => Turma)
     @Column
     turma_id: number
 
     @ForeignKey(() => Pessoas)
     @Column
-    nivel_id: number
+    estudante_id: number
+
+    @BelongsTo(() => Pessoas)
+    pessoas: Pessoas[]
+
+
+
+
 
 
 }

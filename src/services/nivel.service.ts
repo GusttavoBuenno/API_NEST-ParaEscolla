@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
+import { Matricula } from "src/models/Matricula.models";
 import { Nivel } from "src/models/Nivel.models";
 
 

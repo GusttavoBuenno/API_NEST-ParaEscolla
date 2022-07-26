@@ -2,9 +2,6 @@ import { Table, Model, Column, ForeignKey, BelongsTo, HasMany } from "sequelize-
 
 
 
-
-
-
 @Table
 
 export class Turma extends Model<Turma> {
@@ -32,30 +29,3 @@ class Matricula extends Model {
     turma: Turma[]
 }
 
-
-
-
-// @Table
-// class Player extends Model {
-//   @Column
-//   name: string
-
-//   @Column
-//   num: number
-
-//   @ForeignKey(() => Team)
-//   @Column
-//   teamId: number
-
-//   @BelongsTo(() => Team)
-//   team: Team
-// }
-
-// @Table
-// class Team extends Model {
-//   @Column
-//   name: string
-
-//   @HasMany(() => Player)
-//   players: Player[]
-// }
