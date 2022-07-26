@@ -1,6 +1,5 @@
 import { Controller, Get, Put, Body, Post } from "@nestjs/common";
 import { Nivel } from "src/models/nivel.model";
-import { Pessoas } from "src/models/pessoas.model";
 import { NivelService } from "src/services/nivel.service";
 
 

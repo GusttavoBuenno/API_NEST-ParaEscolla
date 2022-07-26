@@ -2,6 +2,7 @@ import { Table, Column, DataType, Model } from "sequelize-typescript";
 
 
 
+
 @Table
 
 export class Nivel extends Model<Nivel> {
@@ -12,4 +13,7 @@ export class Nivel extends Model<Nivel> {
     })
 
     descr_nivel: string
+
+
+
 }

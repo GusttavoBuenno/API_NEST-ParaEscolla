@@ -1,6 +1,6 @@
 import { Body, Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
-import { Matricula } from "src/models/matricula.model";
+import { Matricula } from "../models/Matricula.models";
 
 
 @Injectable()
