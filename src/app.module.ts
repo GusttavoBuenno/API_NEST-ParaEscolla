@@ -26,6 +26,7 @@ import { MatriculaService } from './services/matricula.service';
       database: 'alunos_js',
       autoLoadModels: true,
       synchronize: true,
+      logging: true
     }),
     SequelizeModule.forFeature([Pessoas, Turma, Matricula, Nivel])
   ],

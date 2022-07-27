@@ -5,7 +5,7 @@ import { Table, Model, Column, ForeignKey, BelongsTo, HasMany } from "sequelize-
 @Table
 
 export class Turma extends Model<Turma> {
-    @ForeignKey(() => Matricula)
+
     @Column
 
     docente_id: number;
@@ -14,18 +14,12 @@ export class Turma extends Model<Turma> {
 
     data_inicio: Date;
 
-
-    @BelongsTo(() => Matricula)
-    matricula: Matricula
-
-}
-
-@Table
-class Matricula extends Model {
     @Column
-    estudante_id: number
+    nivel_id: number;
 
-    @HasMany(() => Turma)
-    turma: Turma[]
+
+
+
 }
+
 

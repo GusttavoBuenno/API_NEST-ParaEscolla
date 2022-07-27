@@ -5,23 +5,24 @@ import { Turma } from "./Turma.models";
 
 
 @Table
-export class Matricula extends Model<Matricula>{
+export class Matricula extends Model<Pessoas>{
 
 
 
     @Column
     status: string
 
-    @ForeignKey(() => Turma)
+    @ForeignKey(() => Pessoas)
     @Column
     turma_id: number
 
-    @ForeignKey(() => Pessoas)
+    @BelongsTo(() => Pessoas)
+    pessoas: Pessoas
+
+
     @Column
     estudante_id: number
 
-    @BelongsTo(() => Pessoas)
-    pessoas: Pessoas[]
 
 
 

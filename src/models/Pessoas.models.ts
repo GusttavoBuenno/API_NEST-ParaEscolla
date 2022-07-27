@@ -1,5 +1,6 @@
 import { Table, Model, Column, DataType, ForeignKey, BelongsTo, HasMany } from "sequelize-typescript";
 import { Matricula } from "./Matricula.models";
+import { Nivel } from "./Nivel.models";
 import { Turma } from "./Turma.models";
 
 
@@ -8,7 +9,7 @@ import { Turma } from "./Turma.models";
 
 
 @Table
-export class Pessoas extends Model<Pessoas> {
+export class Pessoas extends Model<Matricula> {
     @Column
     nome: string;
     allowNull: false;
@@ -24,11 +25,12 @@ export class Pessoas extends Model<Pessoas> {
     @Column
     role: string
 
-    @ForeignKey(() => Matricula)
-    docente_id: number
 
-    @ForeignKey(() => Matricula)
-    estudante_id: Matricula
+    @HasMany(() => Matricula)
+    matriculas: Matricula[]
+
+
+
 
 }
 

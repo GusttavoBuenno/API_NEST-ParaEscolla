@@ -2,7 +2,6 @@ import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
 import { Matricula } from "src/models/Matricula.models";
 import { Nivel } from "src/models/Nivel.models";
-import { Turma } from "src/models/Turma.models";
 import { Pessoas } from "../models/Pessoas.models";
 
 @Injectable()
@@ -13,11 +12,11 @@ export class PessoasService {
     ) { }
 
     async obterTodos(): Promise<Pessoas[]> {
-        return this.pessoasModel.findAll();
+        return this.pessoasModel.findAll({ include: [Matricula] });
     }
 
     async obterUm(id: number): Promise<Pessoas> {
-        return this.pessoasModel.findByPk(id);
+        return this.pessoasModel.findByPk(id, { include: [Matricula] });
     }
 
     async criar(pessoas: Pessoas) {
